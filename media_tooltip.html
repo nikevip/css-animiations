@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tooltip for social media</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/b13707494f.js" crossorigin="anonymous"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans', sans-serif; 
+        }
+        html,body{
+               
+            display: grid;
+            height: 100%;
+            width: 100%;
+            place-items: center;
+            background: rgb(162, 196, 196);
+        }
+
+        .wrap{
+            display: inline-flex;
+
+        }
+        .wrap .icon{
+            margin: 0 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        
+            
+        }
+
+        .wrap .icon span{
+            position: relative;
+            height: 60px;
+            width: 60px;
+            display: block;
+            /* background: #fff; */
+            font-size:  20px;
+            line-height: 60px;
+            text-align: center;
+            border-radius: 50%;
+            z-index: 2  ;
+            box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+
+        }
+        .wrap .icon .tooltip{
+            top: 0px;
+            background: grey;
+            /* color: #fff; */
+            font-size: 20px ;
+            position: absolute;
+            padding: 10px 18px;
+            border-radius: 25px;
+            box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        
+        }
+
+        .wrap .icon:hover span{
+            color: #fff;
+        }
+        
+        .wrap .icon:hover .tooltip{
+            opacity: 1;
+            top: -70px;
+            pointer-events: auto;
+
+        }
+        .wrap .icon .       tooltip:before{
+            position: absolute;
+            content: '';
+            height: 15px;
+            width: 15px;
+            background: #FFF;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .wrap .icon:hover span,
+        .wrap .icon:hover .tooltip{
+            text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+        }
+
+        .wrap .facebook:hover span,
+        .wrap .facebook:hover .tooltip,
+        .wrap .facebook:hover .tooltip:before{
+            background: #3B5999;
+
+        }
+        .wrap .twitter:hover span,
+        .wrap .twitter:hover .tooltip,
+        .wrap .twitter:hover .tooltip:before{
+            background: #46c1f6;
+
+        }
+        .wrap .instagram:hover span,
+        .wrap .instagram:hover .tooltip,
+        .wrap .instagram:hover .tooltip:before{
+            background: #e1306c;
+
+        }
+        .wrap .github:hover span,
+        .wrap .github:hover .tooltip,
+        .wrap .github:hover .tooltip:before{
+            background: #333;
+
+        }
+        .wrap .snapchat:hover span,
+        .wrap .snapchat:hover .tooltip,
+        .wrap .snapchat:hover .tooltip:before{
+            background: #e7f523;
+
+        }
+        .wrap .youtube:hover span,
+        .wrap .youtube:hover .tooltip,
+        .wrap .youtube:hover .tooltip:before{
+            background: #de463b;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="icon facebook">
+            <div class="tooltip">Facebook</div>
+            <span><i class="fab fa-facebook-f"></i></span>            
+        </div>
+        <div class="icon twitter">
+            <div class="tooltip">Twitter</div>
+            <span><i class="fab fa-twitter"></i></span>            
+        </div>
+        <div class="icon instagram">
+            <div class="tooltip">Instagram</div>
+            <span><i class="fab fa-instagram"></i></span>            
+        </div>
+        <div class="icon github">
+            <div class="tooltip">Github</div>
+            <span><i class="fab fa-github"></i></span>            
+        </div>
+        <div class="icon snapchat">
+            <div class="tooltip">Snapchat</div>
+            <span><i class="fab fa-snapchat"></i></span>            
+        </div>
+        <div class="icon youtube">
+            <div class="tooltip">Youtube</div>
+            <span><i class="fab fa-youtube"></i></span>
+            
+        </div>
+    </div>
+</body>
+</html>

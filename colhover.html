@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>color hover</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+           
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+
+            background: #252839;
+        }
+        nav ul{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+
+        }
+        nav ul li{
+            list-style: none;
+            
+        }
+
+        nav ul li a{
+            position: relative;
+            text-decoration: none;
+            font-size: 3em;
+            line-height: 1em;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255  , 255, 0.5);
+        }
+        nav ul li a::before{
+            content: attr(data-text);
+            position: absolute;
+            color: #fff;
+            width: 0;
+            overflow: hidden;
+            transition: 1s;
+            border-right: 8px solid #fff;
+        }
+
+        nav ul li a:hover::before {
+            width: 100%;
+            -webkit-text-stroke: 1px #fff;
+        }
+
+
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            
+                <li><a href="" class = "blue" data-text="Home">Home</a></li>
+                <li><a href="" data-text="About">About</a></li>
+                <li><a href="" data-text="Service">Service</a></li>
+                <li><a href="" data-text="Contact">Contact</a></li>
+                <li><a href="" data-text="Help">Help</a></li>
+            
+        </ul>
+    </nav>
+</body>
+</html>

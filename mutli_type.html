@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mutliple typing animations</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0; 
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background:#343F4f;
+        }
+        .wrap{
+            display: inline-flex;
+
+        }
+        .wrap .static{
+            color: #fff;
+            font-size: 60px;
+            font-weight: 400;
+
+        }
+        .wrap .dynamic{
+            margin-left: 15px;
+            height: 90px;
+            line-height: 90px;
+            overflow: hidden;
+        }
+        .dynamic li{
+            color: #fc6d6d;
+            list-style: none;
+            font-size: 60px;
+            position: relative;
+            font-weight:500 ;
+            top: 0;
+            animation: slide 6s steps(4) infinite;
+        }
+        @keyframes slide {
+            100%{
+                top: -360px
+            }
+
+        }
+        .dynamic li span{
+            position: relative;
+        }
+        .dynamic li span::after{
+            content: '';
+            position: absolute;
+            left: 0;
+            background: #343F4f;
+            height: 100%;
+            width: 100%;
+            border-left: 2px solid #fc6d6d;
+            animation: typing 1.5s steps(10) infinite;
+        }
+        @keyframes typing {
+            100%{
+                left: 100%;
+                margin: 0 -35px 0 35px ;
+            }
+
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="static">Im a</div>  
+            <ul class="dynamic">
+                <li><span>footballer</span></li>
+                <li><span>youtuber</span></li>
+                <li><span>fan</span></li>
+                <li><span>coder</span></li>
+            </ul>
+        
+    </div>
+</body>
+</html>

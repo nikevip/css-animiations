@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikhil Singh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans', sans-serif; 
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background:#e1306c;
+        }
+       /* .wrap{
+            display: inline-flex;
+        } */
+        .wrap .dynamic{ 
+         
+            margin-left: 15px;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+        }
+        .dynamic li{
+            text-transform: capitalize;
+            list-style: none;
+            color: #fff;
+            font-size: 30px;
+            position: relative;
+            font-weight: 400;
+            top: 0;
+            animation: slide 8s steps(2) infinite;
+
+        }
+        @keyframes slide{
+            100%{
+                top:-81px;
+                }
+        }
+        
+        .dynamic li span{
+            position: relative;
+
+        }
+        .dynamic li span::after{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background:#e1306c;
+            left: 0;
+            border-left: 2px solid #fff;
+            animation: typing 4s steps(30) infinite;
+
+        }
+        @keyframes typing{
+            100%{
+                left: 100%;
+                margin: 0 -15px 0 15px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <ul class="dynamic">
+            <li><span>Hello my name is Nikhil singh</span></li>
+            <li><span>pursuing btech from vit bhopal</span></li>
+        </ul>
+    </div>
+</body>
+</html>

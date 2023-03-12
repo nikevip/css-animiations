@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>navbar animation</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            list-style: none;
+        }
+        nav ul li a{
+            display: inline-block;
+            position: relative;
+            /* list-style: none; */
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+            padding: 10px 13px;
+            justify-items: center;
+
+            
+        }
+        nav ul li ::after{
+            content: '';
+            width: 0%;
+            height: 2px;
+            background:red ;
+            display: block;
+            margin: auto;
+            transition: 0.3s ease-in-out;
+        }
+
+        nav ul li :hover::after{
+            width: 100%;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="">Home</a>
+                    <a href="">Setting</a>
+                    <a href="">About</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</body>
+</html>
